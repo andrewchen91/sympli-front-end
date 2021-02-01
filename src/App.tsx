@@ -1,26 +1,28 @@
 import React from 'react';
+import { Grommet, Header, Main, Text } from 'grommet';
 import logo from './logo.svg';
 import './App.css';
+import PeopleList from './components/PeopleList';
+import NavigationButtons from './components/NavigationButtons';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const AppHeader = () => (
+  <Header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <Text margin="large" size="xxlarge">
+      Star Wars
+    </Text>
+  </Header>
+);
+
+const App = () => (
+  <Grommet className="App">
+    <AppHeader />
+    <Main>
+      <NavigationButtons />
+      <PeopleList />
+      <NavigationButtons />
+    </Main>
+  </Grommet>
+);
 
 export default App;
